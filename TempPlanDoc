@@ -1,0 +1,60 @@
+the plan is to - 
+
+1. get the print and export functionality working on the results page.
+2. sort change unit commands out.
+3. I want to look at disabling/enabling the results tab depending on whether there is any result to view
+4. enabling/disabling the 'Measure distance' button on the front page if there are no start or endpoints.
+5. adding remove the capability to the end location list incase someone enters are the wrong result.
+6. implementing import for JSON or CSV for start and end location created else were.
+7. center the end locaiton list
+8. fix the look of the output window so the list is spaced out and not all squashed on the left side
+9. Refactor the XAML 
+
+--------------------------------------------------------------------------------------------------------------------
+
+possible directions ---
+
+A. add map tab which displays the result on a map with customized pins
+B. look at creating a mobile applation that incorporates the diatance measure calculator
+C. create a web version of the applciation 
+D. export the measurement calculator into a nuget package - will require extensive testing, documentation and support 
+
+--------------------------------------------------------------------------------------------------------------------
+comments:
+
+- many great ideas..
+- #6 import from JSON 1.1 ok, dialog design and structure subject to change during the project
+- about D:
+	- I don't know if readme points to the right references, can you complement your sources?
+	- there are some constants that differ on various sites, earth/polar radius?
+	- how do we get correct(!) test data? a long straight road!
+/gemzon
+
+- Maybe a display field for start location?
+/gemzon
+--
+
+/copperbeardy
+14th dec 21:34 - clear out and download a fresh copy of the project and the address worked fine in it, 
+there has been something up with my Visual studio for a while I have had problems with other projects, think there 
+was a corrupted file or 2 but work well now
+/copperbeardy
+
+Glad that it worked at last. /gemzon
+--
+
+I have tried different variations of lat/lon(*) display, it is difficult to find the `right´ way to do it. They will not align nicely.
+
+1)	Because of proportional font, they will never be aligned. That, of course, is easy to change with a fixed font width.
+
+2)	Then there (always?) will be a different number of decimals.
+	Fill with zeros will probably don't look good and in fact kind of misleading; (52.12, -4.12) is not `exactly´ the same as (52.1200, -4.1200).
+	(Mathematical it's, needless to say, the same but 54(.0)th latitude is not the same as 54.0000, the latter is a quite precise latitude.)
+
+3)	Let each one use own column. That may look nicer, but only with a fixed font.
+
+(*) Before I saw this project I don't think I would have used 'lon' for longitude. Probably 'long' or maybe 'lng' for code alignment (which I like).
+	Now when I have browsed sites I think 'lon' is more common than the other. But I am not still sure this is the way it should be presented.
+	This may be a language cultural difference I'm not aware of.
+	It's your project, just wanted to share some thoughts.
+/gemzon
